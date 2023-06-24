@@ -4,11 +4,20 @@
 {% block content %}
 
 <div class="row">
-
-    <div class="col-md-6">
+    <div class="col-md-4 mt-2">
         <div data-aos="zoom-in">
-            <div class="publicacion">
-                <input class="pub" type="text" placeholder="¿Que está sucediendo hoy, {{user.username}} ?">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-9">
+                            <input style="text-align: center;" type="text" class="form-control"
+                                placeholder="Qué esta sucediendo hoy, {{user.username}}">
+                        </div>
+                        <div class="col-3">
+                            <button type="submit" class="btn btn-outline-success">Enviar</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

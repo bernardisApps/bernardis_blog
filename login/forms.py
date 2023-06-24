@@ -15,7 +15,7 @@ class RegistrationForm(UserCreationForm):
         widget=forms.PasswordInput(attrs={'class':'form-control'}),
         label='Vuelva a escribir la contraseña'
         )
-    is_staff = forms.BooleanField()
+    is_staff = forms.BooleanField(required=None)
 
     class Meta:
         model = User

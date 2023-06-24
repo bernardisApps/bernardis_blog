@@ -49,7 +49,7 @@ def main(request):
          return redirect(reverse('main'))
     
     user = request.user
-    publicaciones = Publicacion.objects.all()
+    publicaciones = Publicacion.objects.all().reverse()
     context = {'user': user, 'publicaciones' : publicaciones}
     return render(request, 'main.html', context)
 

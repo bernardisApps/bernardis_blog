@@ -49,8 +49,11 @@ def main(request):
          return redirect(reverse('main'))
     
     user = request.user
-    publicaciones = Publicacion.objects.all().reverse()
-    context = {'user': user, 'publicaciones' : publicaciones}
+    publicaciones = Publicacion.objects.all()
+    print(publicaciones)
+    publi_invertida = publicaciones[::-1]
+    print(publi_invertida)
+    context = {'user': user, 'publicaciones' : publi_invertida}
     return render(request, 'main.html', context)
 
 def logout_view(request):

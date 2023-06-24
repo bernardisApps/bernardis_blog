@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Blog Familiar - Login{% endblock %}
+
+{% block content %}
+<h1>login</h1>
+{% if messages %}
+    {% for message in messages %}
+      <div class="alert alert-danger" role="alert">
+        {{ message }}
+      </div>
+    {% endfor %}
+  {% endif %}
+    <div class="login">
+        <form action="" method="post" class="form">
+            {% csrf_token %}
+            {{form.as_p}}
+
+            <input type="submit" value="Entrar">
+        </form>
+    </div>
+{% endblock %}

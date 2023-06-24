@@ -4,6 +4,7 @@ from django.contrib.auth import login, authenticate,logout
 from django.contrib import messages
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
+from publicaciones.models import Publicacion
 
 def registro(request):
     if request.user.is_authenticated:
@@ -40,8 +41,16 @@ def login_form(request):
 
 @login_required
 def main(request):
+    if request.method == 'POST':
+         usuario = request.user
+         contenido = request.POST['contenido']
+         publi = Publicacion(usuario = usuario, contenido = contenido)
+         publi.save()
+         return redirect(reverse('main'))
+    
     user = request.user
-    context = {'user': user}
+    publicaciones = Publicacion.objects.all()
+    context = {'user': user, 'publicaciones' : publicaciones}
     return render(request, 'main.html', context)
 
 def logout_view(request):

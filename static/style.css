@@ -7,3 +7,9 @@
     color:#3333cc;
     text-shadow: 2px 2px 2px darkgray;
 }
+
+.card-publi:hover {
+    background-color:burlywood;
+    transform: scale(1.01);
+    transition: background-color 0.3s, transform 0.3s;
+  }

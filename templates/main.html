@@ -13,7 +13,8 @@
                         <div class="row">
                             <div class="col-md-10">
                                 <input type="text" class="form-control"
-                                    placeholder="Qué esta sucediendo hoy, {{user.username}}" required maxlength="150" name="contenido">
+                                    placeholder="Qué esta sucediendo hoy, {{user.username}}" required maxlength="150"
+                                    name="contenido">
                             </div>
                             <div class="col-md-2">
                                 <button type="submit" class="btn btn-outline-success">Enviar</button>
@@ -36,9 +37,19 @@
                     {% if publicaciones %}
 
                     {% for publicacion in publicaciones %}
-                    <div class="card mt-3">
+                    <div class="card mt-3 card-publi">
                         <div class="card-header">
-                            <p><strong> {{publicacion.usuario}} </strong> - {{publicacion.fecha_publicacion}}</p>
+
+                            {% if publicacion.usuario.username == user.username %}
+
+                                <strong> {{publicacion.usuario}} </strong> - {{publicacion.fecha_publicacion}} | <a href="{% url 'borrar_publi' publicacion.id %}">Borrar</a>
+
+                                {% else %}
+
+                                <strong> {{publicacion.usuario}} </strong> - {{publicacion.fecha_publicacion}}
+
+                            {% endif %}
+
                         </div>
                         <div class="card-body">
                             <p> {{publicacion.contenido}} </p>

@@ -20,12 +20,13 @@
 </head>
 
 <body class="bg-dark">
-
+    
     <div class="container-fluid">
+        
         <nav class="navbar bg-body-tertiary shadow rounded mt-2">
             <div class="container-fluid">
-                <a class="navbar-brand" href="">Blog Bernardis</a>
-
+                <a class="navbar-brand" href=""><strong class="letra-principal">Blog Bernardis</strong></a>
+    
                 {% if user.username != '' %}
                 <div class="ml-auto">
                     <span class="navbar-text">{{user.username}}</span>
@@ -33,7 +34,7 @@
                     <a href="{% url 'logout' %}">Cerrar sesión</a>
                 </div>
                 {% endif %}
-
+    
             </div>
         </nav>
 

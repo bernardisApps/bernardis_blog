@@ -3,20 +3,30 @@
 {% block title %}Blog Familiar - Login{% endblock %}
 
 {% block content %}
-<h1>login</h1>
-{% if messages %}
-    {% for message in messages %}
-      <div class="alert alert-danger" role="alert">
-        {{ message }}
+<div class="row">
+  <div class="col-md-4 mx-auto mt-5">
+    <div class="card">
+      <div class="card-header">
+        <h3 style="text-align: center;">Login</h3>
       </div>
-    {% endfor %}
-  {% endif %}
-    <div class="login">
-        <form action="" method="post" class="form">
-            {% csrf_token %}
-            {{form.as_p}}
-
-            <input type="submit" value="Entrar">
+      <div class="card-body mx-auto">
+        <form class="form-group" style="text-align: center;" action="" method="post">
+          {% csrf_token %}
+          {{form.as_p}}
+          <input type="submit" value="Enviar" class="btn btn-primary">
+          <p>Si no estás registrado click <a href="{% url 'registro' %}">Aquí</a></p>
         </form>
+      </div>
     </div>
+
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-danger mt-5" style="text-align: center;" role="alert">
+      {{ message }}
+    </div>
+    {% endfor %}
+    {% endif %}
+
+  </div>
+</div>
 {% endblock %}

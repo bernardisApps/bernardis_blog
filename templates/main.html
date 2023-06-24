@@ -3,8 +3,16 @@
 
 {% block content %}
 
-    <h1>Bienvenido</h1>
+<div class="row">
 
-    <h2> {{user.username}} </h2>
+    <div class="col-md-6">
+        <div data-aos="zoom-in">
+            <div class="publicacion">
+                <input class="pub" type="text" placeholder="¿Que está sucediendo hoy, {{user.username}} ?">
+            </div>
+        </div>
+    </div>
+</div>
+
 
 {% endblock %}

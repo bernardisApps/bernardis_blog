@@ -38,27 +38,18 @@ def login_form(request):
                     messages.info(request, 'No existe')
 
         return render(request, 'login.html',{'form':form})
+    
+def logout_view(request):
+            logout(request)
+            return redirect(reverse('main'))
 
 @login_required
 def main(request):
-    if request.method == 'POST':
-         usuario = request.user
-         contenido = request.POST['contenido']
-         publi = Publicacion(usuario = usuario, contenido = contenido)
-         publi.save()
-         return redirect(reverse('main'))
-    
     user = request.user
     publicaciones = Publicacion.objects.all()
-    print(publicaciones)
     publi_invertida = publicaciones[::-1]
-    print(publi_invertida)
     context = {'user': user, 'publicaciones' : publi_invertida}
     return render(request, 'main.html', context)
 
-def logout_view(request):
-
-            logout(request)
-            return redirect(reverse('main'))
 
 

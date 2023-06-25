@@ -5,8 +5,8 @@
 {% block content %}
 
     <div class="row" style="margin-top: 100px;">
-        <div class="col-md-4 mx-auto mt-5">
-            <div class="card">
+        <div class="col-md-4 mx-auto mt-5 mb-5">
+            <div class="card fondo-principal">
                 <div class="card-header">
                     <h3 style="text-align: center;">Registro</h3>
                 </div>
@@ -15,7 +15,7 @@
                         {% csrf_token %}
                         {{form.as_p}}
                         <input type="submit" value="Enviar" class="btn btn-primary">
-                        <p>Si ya estás registrado click <a href="{% url 'login' %}">aquí</a></p>
+                        <p class="mt-2">Si ya estás registrado click <a href="{% url 'login' %}">aquí</a></p>
                     </form>
                 </div>
             </div>

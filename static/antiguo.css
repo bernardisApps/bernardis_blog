@@ -1,0 +1,17 @@
+.fondo-principal{
+    background: color #595959;
+    color: whitesmoke;
+}
+
+
+
+
+.card-publi:hover {
+    transform: scale(1.01);
+    transition: transform 0.3s;
+  }
+
+a{
+    color: whitesmoke;
+    text-decoration: none;
+}

@@ -1,15 +1,32 @@
+
 body {
-    font-family: fantasy;
-    background-color:beige;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-color:#1a1a1a;
+    color: whitesmoke;
+    font-size: small;
 }
 
 .letra-principal{
-    color:#3333cc;
-    text-shadow: 2px 2px 2px darkgray;
+    font-weight: bold;
+    color:whitesmoke;
+    text-shadow: 2px 2px 2px black;
 }
 
-.card-publi:hover {
-    background-color:burlywood;
-    transform: scale(1.01);
-    transition: background-color 0.3s, transform 0.3s;
-  }
+.fondo-principal{
+    background-color: #262626;
+    color: whitesmoke;
+}
+
+.navbar{
+    border-bottom: 2px solid #404040;
+}
+
+.card{
+    border-bottom: 1px solid #404040;
+    border-right: 1px solid #404040;
+}
+
+.publi-con{
+    font-size: medium;
+}
+

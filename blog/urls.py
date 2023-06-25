@@ -17,7 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from login.views import registro,login_form,main, logout_view
-from publicaciones.views import borrar_publi
+from publicaciones.views import borrar_publi, nueva_publi
+from perfiles.views import ver_perfil
 
 urlpatterns = [
     path('', main, name='main'),
@@ -25,5 +26,7 @@ urlpatterns = [
     path('registro/',registro, name='registro'),
     path('accounts/login/',login_form,name='login'),
     path('logout/',logout_view, name='logout'),
-    path('borrar/<int:id_publi>', borrar_publi, name='borrar_publi' )
+    path('borrar/<int:id_publi>', borrar_publi, name='borrar_publi' ),
+    path('nueva/', nueva_publi, name='nueva_publi'),
+    path('perfil/<username>', ver_perfil, name='perfil')
 ]

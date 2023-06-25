@@ -11,7 +11,7 @@
                     <div class="row">
                         <div class="col-6">
                             <a class="letra-principal" style="text-decoration: none;"
-                                href="{% url 'perfil' publicacion.usuario %}">{{publicacion.usuario}}</a>
+                                href="{% url 'perfil' publicacion.usuario %}">{% if publicacion.usuario.first_name %} {{publicacion.usuario.first_name}} {% else %}  {{publicacion.usuario.username}} {% endif %}</a>
                         </div>
                         <div class="col-6 d-flex align-items-end flex-column">
 

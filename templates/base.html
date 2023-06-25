@@ -23,20 +23,8 @@
 <body>
     
     <div class="container-fluid">
-        
-        <nav class="navbar fixed-top fondo-principal">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="{% url 'main' %}"><span class="letra-principal">Blog Bernardis</span></a>
-    
-                {% if user.username != '' %}
-                <div class="ml-auto">
-                    <a class="btn btn-secondary" title="Tu Perfil" href="{% url 'perfil' user.username %}"><i class="fa fa-user"></i></a>
-                    <a class="btn btn-danger" title="Cerrar Sesión" href="{% url 'logout' %}"><i class="fa fa-close"></i></a>
-                </div>
-                {% endif %}
-    
-            </div>
-        </nav>
+
+        {% include 'navbar.html' %}
 
         {% block content %}
         {% endblock %}

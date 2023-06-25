@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+
 {% block title %}Bienvenido{% endblock %}
 
 {% block content %}
@@ -17,7 +18,7 @@
                                     name="contenido" id="quepasa">
                             </div>
                             <div class="col-2 mt-1" style="text-align: center;">
-                                <button type="submit" class="btn btn-success"><i class="fa fa-send"></i></button>
+                                <button type="submit" title="Publicar" class="btn btn-success"><i class="fa fa-send"></i></button>
                             </div>
                         </div>
                     </form>
@@ -26,38 +27,8 @@
         </div>
     </div>
 </div>
-<div class="row mt-3">
-    <div class="col-md-8 col-lg-6 mx-auto">
 
-        {% if publicaciones %}
-
-        {% for publicacion in publicaciones %}
-        <div data-aos="zoom-in">
-            <div class="card mt-3 fondo-principal card-publi">
-                <div class="card-header">
-
-                    <span style="font-weight: bold;"><a
-                            href="{% url 'perfil' publicacion.usuario %}">{{publicacion.usuario}}</a></span>-{{publicacion.fecha_publicacion}}
-
-                    {% if publicacion.usuario.username == user.username %}
-
-                    | <a href="{% url 'borrar_publi' publicacion.id %}"><i class="fa fa-trash"></i></a>
-
-                    {% endif %}
-
-                </div>
-                <div class="card-body publi-con">
-                    <p> {{publicacion.contenido}} </p>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
-
-        {% else %}
-        <p>No hay publicaciones</p>
-        {% endif %}
-    </div>
-</div>
+{% include 'publicacion.html' %}
 
 <script>
     window.addEventListener('DOMContentLoaded', function () {

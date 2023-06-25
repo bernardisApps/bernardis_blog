@@ -1,0 +1,40 @@
+<div class="row mt-3">
+    <div class="col-md-8 col-lg-6 mx-auto">
+
+        {% if publicaciones %}
+
+        {% for publicacion in publicaciones %}
+        <div data-aos="zoom-in">
+            <div class="card mt-3 fondo-principal card-publi">
+                <div class="card-header">
+
+                    <div class="row">
+                        <div class="col-6">
+                            <a class="letra-principal" style="text-decoration: none;"
+                                href="{% url 'perfil' publicacion.usuario %}">{{publicacion.usuario}}</a>
+                        </div>
+                        <div class="col-6 d-flex align-items-end flex-column">
+
+                            {% if publicacion.usuario.username == user.username %}
+
+                            <a class="btn btn-secondary" title="Eliminar Publicación" href="{% url 'borrar_publi' publicacion.id %}"><i class="fa fa-trash"></i></a>
+
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body publi-con">
+                    <p> {{publicacion.contenido}} </p>
+                </div>
+                <div class="card-footer" style="text-align: right;">
+                    <span style="font-size: x-small;">{{publicacion.fecha_publicacion}}</span>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+        {% else %}
+        <p>No hay publicaciones</p>
+        {% endif %}
+    </div>
+</div>

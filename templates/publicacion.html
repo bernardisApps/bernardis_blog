@@ -4,7 +4,6 @@
         {% if publicaciones %}
 
         {% for publicacion in publicaciones %}
-        <div data-aos="zoom-in">
             <div class="card mt-3 fondo-principal card-publi">
                 <div class="card-header">
 
@@ -30,7 +29,6 @@
                     <span style="font-size: x-small;">{{publicacion.fecha_publicacion}}</span>
                 </div>
             </div>
-        </div>
         {% endfor %}
 
         {% else %}
